@@ -43,7 +43,7 @@ public class OrdersController {
 		String jwtAccessToken = authorizedClient.getAccessToken().getTokenValue();
 				System.out.println("jwtAccessToken =  " + jwtAccessToken);
 				
-	    String url = "http://127.0.0.1:8082/airports/details";
+	    String url = "http://api-gateway:8082/airports/details";
 	    
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.add("Authorization", "Bearer " + jwtAccessToken);
