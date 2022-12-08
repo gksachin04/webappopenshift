@@ -49,8 +49,8 @@ public class AuthorizationServerConfiguration {
 				.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
 				.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
 				.authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-				.redirectUri("http://auth-client:8080/login/oauth2/code/users-client-oidc")
-				.redirectUri("http://auth-client:8080/authorized")
+				.redirectUri("http://auth-client-myproject.192.168.99.100.nip.io/login/oauth2/code/users-client-oidc")
+				.redirectUri("http://auth-client-myproject.192.168.99.100.nip.io/authorized")
 				.scope(OidcScopes.OPENID)
 				.scope("read")
 				//.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
@@ -72,7 +72,7 @@ public class AuthorizationServerConfiguration {
     @Bean
     public ProviderSettings providerSettings() {
         return ProviderSettings.builder()
-                .issuer("http://auth-server:8000")
+                .issuer("http://auth-server-myproject.192.168.99.100.nip.io")
                 .build();
     }
     
