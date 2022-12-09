@@ -26,12 +26,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>com.example.gremlin</groupId>
-			<artifactId>tinkerpop-spring-boot-parent</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>com.example.gremlin</groupId>
 			<artifactId>tinkerpop-spring-boot-parent</artifactId>
