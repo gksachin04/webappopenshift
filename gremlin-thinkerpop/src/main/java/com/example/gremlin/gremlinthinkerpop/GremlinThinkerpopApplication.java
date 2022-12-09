@@ -21,7 +21,7 @@ public class GremlinThinkerpopApplication{
 
 	@Bean
 	public GraphTraversalSource getG()  {
-		GraphTraversalSource g = traversal().withRemote(DriverRemoteConnection.using("localhost",8182,"g"));
+		GraphTraversalSource g = traversal().withRemote(DriverRemoteConnection.using("gremlin-server",8182,"g"));
 		return g;
 	}
 
