@@ -19,14 +19,8 @@ public class SpringSecurityConfiguration {
 	SecurityFilterChain configureSecurityFilterChain(HttpSecurity http) throws Exception {
 		
 		http
-		.authorizeHttpRequests(authorizeRequests -> {
-			try {
-				authorizeRequests.antMatchers("/v3/api-docs/**").permitAll()
-						.and().authorizeRequests().anyRequest().authenticated();
-			} catch (Exception e) {
-				throw new RuntimeException(e);
-			}
-		})
+		.authorizeHttpRequests(authorizeRequests -> authorizeRequests.antMatchers( "/v3/api-docs").permitAll()
+				.anyRequest().authenticated())
 		.formLogin(Customizer.withDefaults());
 		
 		return http.build();
