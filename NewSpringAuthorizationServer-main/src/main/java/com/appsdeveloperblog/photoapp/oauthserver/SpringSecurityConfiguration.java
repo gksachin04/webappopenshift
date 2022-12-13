@@ -18,10 +18,11 @@ public class SpringSecurityConfiguration {
 	@Bean
 	SecurityFilterChain configureSecurityFilterChain(HttpSecurity http) throws Exception {
 		
-		http
-		.authorizeHttpRequests(authorizeRequests -> authorizeRequests.antMatchers( "/v3/api-docs").permitAll()
-				.anyRequest().authenticated())
-		.formLogin(Customizer.withDefaults());
+		http.authorizeRequests()
+				.antMatchers("/swagger-ui/**").permitAll()
+				.anyRequest().authenticated()
+				.and()
+				.formLogin(Customizer.withDefaults());
 		
 		return http.build();
 		
